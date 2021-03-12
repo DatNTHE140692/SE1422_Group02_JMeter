@@ -1,0 +1,319 @@
+
+PROJECT ASSIGNMENT
+SWT301
+--------------🙜🙜🙜🏵🙞🙞🙞--------------
+
+
+JMeter Tool
+
+
+
+Prepared by: 
+
+Hoàng Phương Thảo HE141702
+&                    Ngô Đức Anh HE140068
+&               Nguyễn Tiến Đạt HE140692
+&   Ninh Công Lực đẹp trai HE140648
+SE1422 - Team 2 - FPT University
+Instructor: Phạm Ngọc Hà
+
+Table of Contents
+
+Table of Contents	ii
+I.	Giới thiệu	3
+1.Performance testing	3
+2.Giới thiệu về Jmeter	4
+3.Ưu điểm và nhược điểm của việc sử dụng Jmeter	5
+II.	Các công cụ tương tự	6
+1.WebLOAD	6
+2.LoadNinja	7
+3.LoadView	8
+III.	Chức năng	9
+	1.Mô hình hoạt động 	9
+	2.Chức năng của các tính năng Jmeter	10
+IV. Hướng dẫn sử dụng	20
+	1.Điều kiện	20
+	2.Download JMeter	21
+3.Làm sao để có thể chạy JMeter	23
+
+
+
+
+							
+
+
+
+
+
+
+
+
+
+
+
+
+GIỚI THIỆU: 
+
+Performance testing:
+
+
+   Performance Testing là một loại kiểm thử nhằm xác định mức độ đáp ứng, băng thông, độ tin cậy và/hoặc khả năng mở rộng của hệ thống dưới một khối lượng làm việc/truy cập nhất định. Performance Testing thường được sử dụng để:
+Đánh giá mức độ sẵn sàng của sản phẩm
+Đánh giá dựa vào các tiêu chí hiệu suất
+So sánh giữa các đặc tính hiệu suất của đa hệ thống hoặc cấu hình hệ thống
+Tìm ra nguồn gốc của các vấn đề về hiệu suất
+Hỗ trợ điều chỉnh hệ thống
+Tìm các mức độ băng thông
+   Performance Testing thường được dùng để giúp xác định tắc nghẽn trong một hệ thống, thiết lập một đường cơ sở để kiểm thử trong tương lai, hỗ trợ điều chỉnh hiệu suất hiệu quả, xác định sự phù hợp mục tiêu và yêu cầu hiệu suất, và thu thập dữ liệu hoạt động liên quan khác để giúp các bên liên quan đưa ra quyết định liên quan đến chất lượng chung của các ứng dụng đang được kiểm thử. Ngoài ra, các kết quả từ việc kiểm thử hiệu suất và phân tích có thể giúp bạn ước tính cấu hình phần cứng cần thiết để hỗ trợ các ứng dụng khi bạn đưa sản phẩm đi vào sử dụng rộng rãi.
+Giới thiệu về Jmeter
+ 
+
+ 
+a. Giới thiệu:
+Apache JMeter là phần mềm mã nguồn mở được viết bằng Java thuần túy, được phát triển lần đầu tiên bởi Stefano Mazzocchi dùng để kiểm tra độ chịu tải hiệu suất. Ban đầu nó được thiết kế để đơn thuần kiểm tra cho ứng dụng web, sau đã được mở rộng ra nhiều chức năng khác.
+ 
+JMeter có thể kiểm tra hiệu năng trên nhiều loại server khác nhau như Web-HTTP, HTTPS, SOAP,…
+Database via JDBC, LDAP, JMS, Mail –
+SMTP(S), POP3(S), IMAP(S)….
+ 
+b. Đặc trưng:
+Mã nguồn mở, giao diện trực quan, dễ sử dụng.
+Có thể kiểm thử nhiều kiểu server: Web - HTTP, HTTPS, SOAP, Database - JDBC, LDAP, JMS, Mail - POP3, …
+Có thể chạy trên nhiều nền tảng hệ điều hành khác nhau…
+Đa luồng, giúp xử lý nhiều request cùng một khoảng thời gian, xử lý các dữ liệu thu được một cách hiệu quả.
+Đặc tính mở rộng, có rất nhiều plugin được chia sẻ rộng rãi và miễn phí.
+Jmeter thực hiện giả lập một nhóm người dùng gửi các yêu cầu tới một máy chủ, nhận và xử lý các phản hồi từ máy chủ.
+ 
+ 
+c. Các tính năng chính:
+License: Vì JMeter là mã nguồn mở nên nó miễn phí và dễ sử dụng.
+Graphical User Interface: Đơn giản, thân thiện với người dùng và dễ học so với các công cụ performance test khác
+Server/ Protocol Support: JMeter có khả năng load và performance test các ứng dụng/máy chủ/giao thức khác nhau. Một số giao thức bao gồm HTTP, HTTPS, FTP, SOAP/REST, Cơ sở dữ liệu qua JDBS, LDAP, JMS, SMTP (S), POP (3) và IMAP (S), Native Commands/Shell Scripts và TCP.
+Platform: JMeter là phần mềm java thuần túy. Do đó, nó độc lập với nền tảng và hỗ trợ mọi môi trường.
+Simulation: Mô phỏng nhiều người dùng bằng cách sử dụng người dùng ảo hoặc người dùng duy nhất để tạo ra lưu lượng truy cập lớn trên máy chủ web hoặc dịch vụ.
+Supports Distributed Testing:: Nó có master slave để kiểm tra phân tán, trong đó master sẽ phân phối các bài test giữa tất cả các slave và các slave sẽ thực thi các tập lệnh gọi máy chủ của bạn.
+Test Result Visualisation: Kết quả test có thể xem ở các định dạng khác nhau như Đồ thị, Bảng, Cây và Báo cáo,...
+Reporting: Theo mặc định, JMeter chỉ cung cấp các Định dạng Báo cáo XML và CVS. Chúng ta có thể sử dụng Jmeter và ANT cùng nhau để lấy báo cáo HTML theo yêu cầu.
+Testing Types: Ngoài performance test, Load test, Stress test, Jmeter còn hoạt động tốt cho functional test, regression và Soak/Endurance test.
+Record and Playback Ghi lại kịch bản/hành động của người dùng trong Trình duyệt Firefox và phát các tập lệnh
+Framework: Framework đa luồng cho phép lấy mẫu đồng thời và mô phỏng các chức năng khác nhau bởi nhiều nhóm hoặc luồng riêng biệt.
+Installation: Không cần cài đặt phức tạp - Chỉ cần chạy JMeter.bat trên windows/chạy Jmeter.sh trên Linux
+Knowledge: Jmeter không yêu cầu kiến ​​thức lập trình sâu rộng. Nếu có kiến thức về java thì sẽ tốt hơn
+ 
+ 
+Ưu điểm và nhược điểm của việc sử dụng Jmeter:
+Ưu điểm:
+GUI: Rất dễ sử dụng vì có giao diện người dùng cùng với đồ họa thân thiện nên có thể làm quen trong khoảng thời gian ngắn
+Nền tảng độc lập: Jmeter là ứng dụng máy tính thuần túy nên có thể chạy được trên nhiều nền tảng khác nhau như window, macOS, linux…
+Đa luồng: Jmeter cho phép lấy kết quả song song của các chức năng khác nhau bằng cách chạy song song các luồng khác nhau
+Trực quan hóa kết quả: Jmeter cho phép kiểm tra kết quả ở các định dạng khác nhau như Tree result và biểu đồ
+Dễ dàng cài đặt: Jmeter có thể chạy bằng cách chạy tệp bat, không cần thiết phải cài đặt
+Mã nguồn mở: Jmeter là một phần mềm có mã nguồn mở, có thể sử dụng mã nguồn một cách tự do để phát triển
+Hỗ trợ đa giao thức: Jmeter hỗ trợ kiểm tra ứng dụng web và ước tính hiệu suất của máy chủ cơ sở dữ liệu. Nó hỗ trợ cho nhiều các giao thức khác nhau như HTTP, JDBC, FTP, SOAP, …
+Ghi và phát lại: Jmeter theo dõi hoạt động của người dùng trên trình duyệt web và sao chép lại dưới dạng ứng dụng.
+
+        b. Nhược điểm:
+Giám sát thử nghiệm hạn chế: So với các công cụ thử nghiệm khác, Jmeter cung cấp khả năng giám sát thử nghiệm rất hạn chế.
+Không hỗ trợ JS: Jmeter là một công cụ kiểm tra, không phải là một trình duyệt nên không thể sử dụng JavaScript
+Tiêu tốn bộ nhớ: Jmeter có thể tái tạo việc tải nặng và làm trực quan hóa các kết quả test dẫn đến việc tiêu tốn bộ nhớ
+Chỉ áp dụng cho các ứng dụng web: Jmeter cho phép test các chương trình web, nhưng không hỗ trợ cho các chương trình desktop  
+Thiếu hướng dẫn: Cần phải tìm hiểu và cần một số kinh nghiệm mới có thể sử dụng và hiểu các tính năng và thông số trong Jmeter
+
+II.     CÁC CÔNG CỤ TƯƠNG TỰ
+WebLoad
+   Đây là một công cụ kiểm tra tải quy mô doanh nghiệp có thể tạo ra các kịch bản tải thực tế và đáng tin cậy, ngay cả trong hầu hết các hệ thống phức tạp. Phân tích thông minh của nó cung cấp thông tin chi tiết chuyên sâu về hiệu suất.     Công cụ này đi kèm với hỗ trợ tích hợp cho hàng trăm công nghệ. Nó cũng tích  hợp với một số công cụ để hỗ trợ việc giám sát đơn giản hơn.
+   Các tính năng chính của công cụ kiểm tra hiệu suất này như sau:
+Nó có sẵn trên Cloud hoặc dưới dạng triển khai tại chỗ
+Dễ dàng mở rộng và hỗ trợ tất cả các công nghệ web chính
+Tạo môi trường thử nghiệm linh hoạt
+JavaScript gốc dựa trên kịch bản thông minh với công cụ xác thực, tham số hóa và mối tương quan mạnh mẽ
+Tự động phát hiện tắc nghẽn
+   WebLOAD được sử dụng rộng rãi bởi các dịch vụ kiểm tra hiệu suất với các yêu cầu tải nặng và phức tạp của người dùng. Bạn có thể tiến hành kiểm tra căng thẳng và tải trên bất kỳ phần mềm dựa trên web nào bằng cách tạo tải từ các hệ thống tại chỗ và Đám mây. Nó hỗ trợ các công nghệ bao gồm các ứng dụng doanh nghiệp đến các giao thức web. Nó hỗ trợ tích hợp với các công cụ như Selenium, Jenkins và nhiều công cụ khác để cho phép kiểm tra tải liên tục cho DevOps. 
+2. LoadNinja
+    LoadNinja cho phép bạn xây dựng các bài kiểm tra tải không cần tập lệnh. Nó được các dịch vụ kiểm tra hiệu suất ưa thích vì nó giúp giảm một nửa thời gian kiểm tra. Các lợi thế khác bao gồm thay thế trình giả lập tải bằng trình duyệt thực và tạo các chỉ số có thể hành động. 
+   Công cụ này cho phép bạn gỡ lỗi trong thời gian thực, ghi lại các tương tác phía máy khách, xác định các vấn đề về hiệu suất ngay lập tức và làm được nhiều việc khác. LoadNinja cho phép bạn tăng phạm vi thử nghiệm của mình mà không ảnh hưởng đến chất lượng. Nó loại bỏ các tác vụ rườm rà, lặp đi lặp lại liên quan đến dịch kịch bản, tương quan động và lọc tập lệnh. Nó cho phép bạn dành nhiều thời gian hơn trong việc phát triển các ứng dụng có thể mở rộng và ít thời gian hơn vào việc tạo các tập lệnh thử nghiệm tải. 
+   Các tính năng chính của LoadNinja như sau: 
+Kiểm tra tải trình duyệt thực trên quy mô lớn
+Tạo tính năng kiểm tra tải và phát lại không cần tập lệnh
+Quản lý thời gian thực hoạt động của người dùng ảo
+Gỡ lỗi kiểm tra thời gian thực
+Các chỉ số dựa trên trình duyệt nâng cao với các tính năng báo cáo và phân tích
+Lưu trữ dựa trên đám mây loại bỏ việc bảo trì máy chủ 
+   LoadNinja hỗ trợ các giao thức sau: 
+HTTPS
+HTTP
+Java-based protocol
+SAP GUI Web
+Google Web Toolkit
+WebSocket
+Oracle Forms
+3. LoadView
+   LoadView cũng phổ biến rộng rãi với các dịch vụ kiểm tra hiệu suất. Đây là một công cụ thử nghiệm tải và kiểm tra căng thẳng theo yêu cầu và được quản lý đầy đủ. Nó khác với hầu hết các công cụ kiểm tra tải khác ở chỗ kiểm tra được tiến hành trong các trình duyệt thực. Kết quả là mô phỏng gần gũi với người dùng thực và dữ liệu chính xác cao. Nó hoàn toàn dựa trên đám mây và được triển khai dễ dàng trong vài phút. Nó cho phép tạo các tập lệnh nhiều bước mô phỏng tương tác của người dùng với ứng dụng hoặc trang web của bạn. 
+   Một số tính năng chính của LoadView như sau: 
+Hỗ trợ các tính năng kiểm tra tải nâng cao như cơ sở hạ tầng dựa trên Đám mây toàn cầu, tập lệnh trỏ và nhấp và kiểm tra trình duyệt thực
+Cho phép tạo ngay lập tức và dễ dàng các tập lệnh thử nghiệm mà không cần mã hóa
+Hỗ trợ các ứng dụng Internet phong phú bao gồm Java, Flash, HTML5, Ruby, Silverlight và PHMP trong số các ứng dụng khác
+Hơn một chục địa điểm trên đám mây toàn cầu được hỗ trợ bởi Google Cloud Platform và Amazon Web Services
+Kiểm tra khả năng tương thích với hàng chục máy tính để bàn và thiết bị di động và trình duyệt
+Dễ dàng chia sẻ các số liệu và báo cáo hiệu suất
+Xác định các điểm nghẽn và hỗ trợ khả năng mở rộng 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+III.    CHỨC NĂNG
+1. Mô hình hoạt động
+         
+
+   JMeter mô phỏng một nhóm người dùng gửi yêu cầu đến một máy chủ và trả về thông tin thống kê của máy chủ thông qua biểu đồ. Quy trình khi gửi một request trong JMeter thể hiện như trong hình bên dưới:
+Step 1:  JMeter sẽ khởi tạo các request tới máy chủ và mô phỏng số lượng người dùng (dựa vào Number of Threads được khởi tạo trong ThreadGroup )
+Step 2:  JMeter sẽ chờ phản hồi response từ phía server
+Step 3: Khi các phản hồi đã được phía server trả về, JMeter sẽ lưu tất cả các phản hồi server
+Step 4: JMeter thu thập dữ liệu và phân tích số liệu như: độ trễ của 1 response, khoảng thời gian phía người dùng phải chờ request trả về là bao nhiêu, dữ liệu trả về có định dạng như (text/html, JSON, …)
+Step 5: Sau khi JMeter đã phân tích dữ liệu xong, sẽ phân tích dữ liệu vừa phân tích được dưới dạng tree, graph hoặc là dưới dạng table, …
+2. Chức năng của các tính năng Jmeter
+Test Plan
+Thread Group
+HTTP(S) Test Script Recorder
+Recording Controller
+HTTP Request Defaults
+HTTP Cookie Manager
+User Defined Variables
+Listeners
+
+Test Plan trong Jmeter
+   Một Test plan - kế hoạch thử nghiệm trong màn hình Jmeter là một shelter, nơi bạn có thể giữ tất cả các cấu hình cần thiết để thực thi script, các Test Step và các element để ghi lại các kết quả. Có rất nhiều cấu hình và các phần tử Test mà bạn có thể thêm vào trong một Test Plan, nhưng ở đây chúng ta sẽ chỉ thảo luận về những phần cần thiết để chạy một Jmeter script cơ bản.
+
+   Để thêm một element bất kỳ hoặc một cài đặt tương ứng nào, bạn sẽ cần phải Nhấp chuột phải vào Test Plan và sẽ thấy hộp tùy chọn mở ra. Đầu tiên bạn sẽ thấy là “add” giống như trong hình ảnh được hiển thị, các tùy chọn này có thể được thêm vào như một phần của Test Plan.
+Threads(Users) : Thread Group được thêm vào Test Plan từ tùy chọn hoạt động như điểm bắt đầu của một Jmeter Performance script bất kỳ.
+Test Fragment : Một dạng đặc biệt của controller nhưng vẫn ở vẫn ở cấp Thread Group. Nó không phải là một phần của việc thực thi test trừ khi được tham chiếu bởi một trong hai Module Controller hoặc Include Controller.
+Cấu hình cơ bản:g
+    Config Element : Tất cả các cấu hình cần thiết để chạy một test script được thêm vào từ tùy chọn. Ví dụ: Đọc giá trị Test Data từ tệp CSV, Cookie Manager, Cache Manager, Lưu trữ biến do người dùng xác định, yêu cầu mặc định HTTP & FTP và nhiều thứ khác.
+Timers: Theo mặc định, Jmeter thực thi mà không bị tạm dừng. Bộ hẹn giờ có thể được thêm vào để làm chậm thời gian xác định trước khi thực hiện từng sampler.
+Pre Processors : Được sử dụng để thực thi một số hành động trước khi Sampler Request được gửi đến máy chủ.
+Post Processors : Được sử dụng để thực hiện một số hành động sau khi Sampler Request được thực thi và được gửi đến máy chủ.
+Assertions : Tất cả màu xanh lá cây và không có lỗi trong response? Tuyệt vời, Jmeter script của bạn đã được thực thi thành công. Đợi đã, Bạn có nhìn vào response để xác nhận không? Đừng dựa vào tỷ lệ bug hoặc màu xanh để đánh giá mức độ thành công của bạn.Có thể là bạn có thể không nhận được kết quả mong đợi nhưng Jmeter sẽ cho thấy rằng bài test của bạn đã pass.
+    Bạn có thể tự động hóa quá trình này bằng cách thêm Assertions. Mỗi khi bạn chạy script, “Assertions” sẽ tìm thấy pattern phù hợp trong response và dựa trên thành công / thất bại đó để quyết định.
+Listeners : Nó được sử dụng để giới thiệu response được lấy từ máy chủ cho mỗi lần thực hiện.
+ 
+Thread Group
+   Một Thread Group trong Jmeter là điểm khởi đầu của bất kỳ một Test plan nào. Nó bao gồm tập hợp các Threads (Users) được sử dụng để thực hiện cùng một script. Ngoài "Number Of Threads", bạn cũng có thể sử dụng "Ramp-Up period tính bằng giây" và số lần lặp lại. Bạn cũng có thể đặt lịch trình cho việc thực hiện bằng cách cung cấp "Duration tính bằng giây", “Start Time” và “End Time”.
+   Nói một cách đơn giản, một Thread Group được sử dụng để lưu trữ tất cả các cấu hình cần thiết để chạy Jmeter Performance Script của bạn.
+   Làm thế nào để thêm Thread Group từ Test plan?
+Thêm Thread Group là bước đầu tiên để xây dựng Jmeter script của bạn. Để thêm Thread Group: Kích chuột phải vào Test Plan> Add> Threads (Users)> Thread Group.
+
+Khi Thread Group được thêm vào, màn hình của bạn sẽ trông như sau:
+
+HTTP(S) Test Script Recorder
+   HTTP(S) Test Script Recorder được sử dụng để ngăn chặn và nắm bắt các hành động của bạn trong khi bạn đang điều hướng chức năng trên trình duyệt.    Lưu ý rằng, Jmeter phụ thuộc vào máy chủ proxy của nó để ghi lại các hành động được thực hiện trên trình duyệt. Vì vậy, trước khi bắt đầu cài đặt proxy của trình duyệt, bạn cần thay đổi bản ghi để khớp với Jmeter.
+    Khi bạn bắt đầu ghi và thực hiện các thao tác trên trình duyệt, Jmeter sẽ bắt đầu tạo Test sample request và lưu trữ chúng trực tiếp bên dưới Thread Group.
+   Làm thế nào để thêm HTTP (S) Test Script Recorder?
+Nhấp chuột phải vào WorkBench > Add > Non-Test Elements > HTTP(S) Test Script Recorder.
+
+      Bây giờ, chúng ta hãy hiểu một số tính năng cần thiết của Script Recorder.
+
+Port: Trường này chứa giá trị Port mà Jmeter proxy sẽ sử dụng để nghe. Hãy mặc định nó sẽ có giá trị "8888", nhưng nó có thể được thay đổi.
+Target Controller : Để xác định nơi bạn muốn Jmeter lưu trữ tất cả các yêu cầu được ghi lại.Theo mặc định, nó có giá trị “Recording Controller”, nhưng bạn có thể thay đổi nó thành “Thread Group” hoặc bất kỳ bộ điều khiển nào khác.
+Grouping: Tùy chọn này được sử dụng để nhóm các yêu cầu được ghi lại cho mỗi hành động (nhấp). Theo mặc định, nó sẽ có giá trị là "Do not group samplers", đó là nơi Jmeter lưu trữ tất cả các requests mà không cần group.
+Capture HTTP Headers : Có.
+Patterns to Include / Exclude : Các mẫu biểu thức chính quy được cung cấp sẽ được kiểm tra đối với URL đang được ghi lại. Nếu tìm thấy kết quả phù hợp, Jmeter sẽ thực hiện hành động để kết nhập hoặc loại trừ yêu cầu đó.
+Nút Start / Stop : Được sử dụng để khởi tạo / dừng máy chủ proxy.
+ 
+Recording Controller
+   Recording Controller là một bộ chứa trong đó HTTP Test Script Recorder lưu trữ tất cả các samplers. Lưu ý rằng, nó không đóng vai trò nào trong thực thi.
+   Làm thế nào để thêm Recording Controller ?
+Nhấp chuột phải vào Thread Group từ Test Plan > Add > Logic Controller > Recording Controller.
+HTTP Request Defaults
+   HTTP Request Defaults là một trong những yếu tố chính trong Jmeter Test Plan. Nếu biết cách sử dụng tính năng này một cách hiệu quả, bạn có thể tránh trùng lặp dữ liệu và có thể maintain các parameter trên tất cả các requests.
+   Giả sử bạn có một Test Script bao gồm 50 HTTP Requests. Tất cả các requests sẽ được trỏ đến cùng một máy chủ. Bây giờ bạn cần thực thi một test script tương tự trên một máy chủ khác. Trong trường hợp này, bạn cần phải cung cấp tên miền / IP mới cho mỗi Requests HTTP theo cách thủ công. Nếu Test Script của bạn có hơn 50 Requests HTTP thì sao? Có thể là 150 hay thậm chí nhiều hơn thế?
+   Mặc định Requests HTTP cho phép bạn configure cấu hình các parameter đó và mỗi requests sẽ kế thừa các giá trị này trong khi thực thi.
+   Ngoài "Tên máy chủ hoặc IP", bạn cũng có thể cấu hình "Số Port" và "Parameters".
+   Làm thế nào để thêm các HTTP Request Defaults?
+Nhấp chuột phải vào Thread Group > Add > Config Element > HTTP Request Defaults.
+
+   Khi các HTTP Request Defaults được thêm vào, nó sẽ giống như được hiển thị trong hình dưới đây:
+
+HTTP Cookie Manager
+   Chức năng chính của HTTP Cookie Manager là lưu trữ các cookie được sử dụng trong tất cả các Request transactions trong tương lai. Nếu Jmeter Script của bạn có Request HTTP và response chứa cookie withing, HTTP Cookie Manager (Nếu được thêm) sẽ lưu trữ tự động tất cả các dữ liệu này. Cookie không xuất hiện trên màn hình Cookie Manager, nhưng bạn có thể thấy chúng bằng cách sử dụng View Result Tree listener.
+   Cookies có thể được lưu dưới dạng biến. Để thực hiện việc đó. Đi tới thư mục Cài đặt > Mở thư mục Bin > Mở jmeter.properties file bằng notepad > Cài đặt CookieManager.save.cookies = true. Jmeter sẽ lưu trữ tất cả Cookie có tiền tố “COOKIE_” Nếu bạn muốn lấy giá trị của cookie có tên “JSESSIONID” từ “Cookie Storage Area”, hãy sử dụng ${COOKIE_JSESSIONID}.
+   Làm thế nào để thêm HTTP Cookie Manager ?
+Nhấp chuột phải vào Thread Group > Add > Config Element > HTTP Cookie Manager.
+
+   Khi HTTP Cookie Manager được thêm vào, màn hình của bạn sẽ trông giống như sau:
+
+   Có một tùy chọn để xóa cookie sau mỗi lần lặp lại (iteration). Các cookie được định nghĩa bởi máy chủ sẽ bị xóa sau mỗi lần thiết lập lại Thread Group. Cookie do người dùng defined vẫn được giữ nguyên.
+CSV Dataset Config
+   CSV Dataset Config được sử dụng khi bạn phải test một ứng dụng web với một bộ test data cho một trường duy nhất. Ví dụ: Bạn đã recorded một Jmeter script cho chức năng Đăng nhập. Bây giờ để thực hiện cùng một script với độ chịu tải của 20 người dùng, bạn sẽ cần một nơi lưu trữ test data của 20 người đó và Jmeter sẽ thực thi mỗi Thread bằng cách sử dụng thông tin riêng biệt của từng người dùng.
+   Jmeter hỗ trợ tệp CSV để đọc Test Data. Hãy xem xét configuration required trong CSV Datset Config.
+Tên tệp : Tên tệp chính xác (có đuôi .csv) chứa test data để thực thi và nằm ở cùng vị trí với script jmeter.
+Tên biến : Danh sách tất cả các tên biến (được phân cách bằng dấu phẩy) theo thứ tự như được đề cập trong Tệp CSV.
+Dấu phân cách: Quy ước là dấu ”,“.
+Tái sử dụng trên EOF : Nếu số lượng thread lớn hơn số lượng test data, bạn có muốn tiếp tục thực thi bằng cách bắt đầu đọc từ đầu không?
+Dừng thread trên EOF : Nếu cài đặt “True”, Gán vào EOF sẽ làm cho thread dừng lại.
+Chế độ chia sẻ : Cùng một tệp được chia sẻ giữa “Tất cả thread ” HOẶC mỗi tệp được mở cho mỗi Nhóm thread HOẶC mỗi tệp được mở riêng cho từng thread.
+   Cách thêm CSV Dataset Config?
+Nhấp chuột phải vào Thread Group > Add > Config Element > CSV Data Set Config.
+
+Listeners
+   Jmeter thu thập thông tin trong quá trình thực thi chạy script. Những response thu thập được hiển thị bởi Jmeter Listeners. Có nhiều loại trình listeners có sẵn. "View Result Tree" cung cấp chi tiết về sampler request và nhận response dưới dạng HTML, XML, JSON, vv "Graph Listeners" hiển thị thông tin dưới dạng biểu đồ response.
+   Trong một số điều kiện bắt buộc, bạn có thể trích xuất dữ liệu từ response do listeners tìm nạp và coi chúng như một phần của Request parameters cho các subsequent samplers.
+   Làm thế nào để thêm Listeners ?
+Nhấp chuột phải vào Thread Group > Add > Listeners.
+
+
+IV.    HƯỚNG DẪN SỬ DỤNG
+1. Điều kiện:
+   Yêu cầu về phần mềm: Vì JMeter là phần mềm thuần Java, vì vậy bắt buộc phải có Java mới có thể cài đặt sử dụng được JMeter. JMeter 5.0 chỉ hỗ trợ chạy được trên Java 8 và 9, theo khuyến cáo của trang chủ JMeter các version Java khác không được hỗ trợ.
+
+   Yêu cầu về Hệ điều hành (OS): Nếu hệ điều hành của bạn có hỗ trợ Java, thì JMeter có thể chạy tốt trên máy đó. Dưới đây sẽ là các file để thực hiện chạy JMeter với các hệ điều hành tương ứng:
+Windows: jmeter.bat
+MacOS: jmeter.sh
+Linux: jmeter.sh
+
+
+2. Download JMeter 
+   Tải xuống phiên bản mới nhất của JMeter tại thời điểm hiện tại là JMeter 5.0. Lưu ý rằng, bản cài đặt của JMeter có dạng portable, có nghĩa là bạn chỉ việc download file nén, sau đó giải nén và có thể sử dụng nó luôn chứ không cần phải cài đặt. Vì vậy, đối với các OS khác nhau thực hiện tương tự nhau chỉ khác nhau ở file nén.
+
+Đi đến trang https://jmeter.apache.org/download_jmeter.cgi để download JMeter
+
+
+Click download apache-jmeter-5.0.zip đối với Windows và apache-jmeter-5.0.tgz đối với MacOS và Linux. Ngay lúc này Trình duyệt sẽ bắt đầu download JMeter.
+Các bạn lưu ý rằng, ở trên trang chủ sẽ có 2 phần đó là Binaries và Source, đối với chúng ta là các người dùng bình thường thì sẽ download phần Binaries, phần Source dành cho những người muốn chỉnh sửa, phát triển thêm các tính năng trong JMeter.
+
+
+Sau khi hoàn thành việc download apache-jmeter-5.0, thực hiện giải nén chúng ta sẽ được folder như bên dưới.
+
+
+   Folder bin chứa các files templates, .bat, .sh, .jar để start JMeter. Nó cũng chứa các file User và JMeter properties. 
+   Folder lib chứa tất cả file jar bắt buộc.
+
+
+   bat: muốn khởi chạy được giao diện người dùng của JMeter thì phải chạy file này trên Windows.
+   sh: muốn khởi chạy được giao diện người dùng của JMeter thì phải chạy file này trên MacOS và Linux.
+
+3. Làm sao để có thể chạy JMeter?
+
+   Vào folder bin của apache-jmeter-5.0
+   Tìm đến file bat (nếu bạn không thấy đuôi .bat hãy nhìn sang cột Type trong folder, nó chính là kiểu Windows Batch File) bên trong folder bin và click đúp vào nó.
+
+   
+   Click đúp vào file này giao diện người dùng của JMeter sẽ hiển thị.
+
+
+
+
+
+
+
+
+
