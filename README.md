@@ -1,6 +1,6 @@
 # JMeter & Performance Testing
 ## SE1422 - Group 2
-### Lecture: Pham Ngoc Ha
+### Lecturer: Pham Ngoc Ha
 
 | ID | Name |
 | ------ | ------ |
